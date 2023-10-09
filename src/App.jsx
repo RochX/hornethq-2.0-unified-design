@@ -2,15 +2,16 @@ import React from "react";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
-import Academics from "./pages/Academics"
-import Grades from "./pages/Academics/Grades"
-import Layout from "./pages/Layout";
+import Academics from "./pages/Academics";
+import Grades from "./pages/Academics/Grades";
+import Sidebar from "./components/Sidebar";
+
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+      {/* <header className="App-header">
         <p>
           Hornet HQ 2.0 Unified Design Prototype
         </p>
@@ -24,17 +25,16 @@ function App() {
         </a>
       </header>
 
-      <hr></hr>
+      <hr></hr> */}
+
+      <Sidebar />
 
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />}/>
-          <Route path="home" element={<Home />}/>
-          <Route path="academics" element={<Academics />}>
-            {/* TODO: make Grade render when within "/academics/grades" */}
-          </Route>
-          <Route path="/academics/grades" element={<Grades />} /> 
-          
+        <Route path="/">
+          <Route index element={<Home />} />
+          <Route path="home" element={<Home />} />
+          <Route path="academics" element={<Academics />} />
+          <Route path="/academics/grades" element={<Grades />} />
         </Route>
       </Routes>
 

@@ -2,7 +2,10 @@ import React from "react";
 
 function Home() {
     return (
-        <h1>This is the Home</h1>
+        <div>
+            <h1>This is the Home</h1>
+            <h3>Hello Student!</h3>
+        </div>
     );
 }
 

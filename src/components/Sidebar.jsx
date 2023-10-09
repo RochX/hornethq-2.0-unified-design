@@ -1,9 +1,9 @@
 import React from "react";
-import { Outlet, Link } from "react-router-dom"
+import { Outlet, Link } from "react-router-dom";
 
-function Layout () {
+function Sidebar() {
     return (
-        <div>
+        <div className="sidebar">
             <ul>
                 <li><Link to="/home">Home</Link></li>
                 <li>
@@ -13,9 +13,8 @@ function Layout () {
                     </ul>
                 </li>
             </ul>
-            <Outlet />
         </div>
     );
 }
 
-export default Layout;
+export default Sidebar;
