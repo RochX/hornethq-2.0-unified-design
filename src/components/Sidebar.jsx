@@ -1,17 +1,17 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
+import SidebarButton from "./sidebar/SidebarButton";
+
+// import link image icons
+import HomeIcon from "./sidebar/home-icon.png"
+import AcademicsIcon from "./sidebar/academics-icon.png"
 
 function Sidebar() {
     return (
         <div className="sidebar">
             <ul>
-                <li><Link to="/home">Home</Link></li>
-                <li>
-                    <Link to="/academics">Academics</Link>
-                    <ul>
-                        <li><Link to="/academics/grades">Grades</Link></li>
-                    </ul>
-                </li>
+                <SidebarButton path="/home" src={HomeIcon} name="Home" />
+                <SidebarButton path="/academics" src={AcademicsIcon} name="Academics" />
             </ul>
         </div>
     );
