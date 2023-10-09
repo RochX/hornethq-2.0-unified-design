@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
 import Sidebar from "./components/Sidebar";
+import Topbar from "./components/Topbar";
 
 import "./App.css"
 
@@ -26,17 +27,21 @@ function App() {
       </header>
 
       <hr></hr> */}
-
+      
       <Sidebar />
-
-      <Routes>
-        <Route path="/">
-          <Route index element={<Home />} />
-          <Route path="home" element={<Home />} />
-          <Route path="academics" element={<Academics />} />
-          <Route path="/academics/grades" element={<Grades />} />
-        </Route>
-      </Routes>
+      <div className="main-page">
+        <Topbar />
+        <div className="content">
+          <Routes>
+            <Route path="/">
+              <Route index element={<Home />} />
+              <Route path="home" element={<Home />} />
+              <Route path="academics" element={<Academics />} />
+              <Route path="/academics/grades" element={<Grades />} />
+            </Route>
+          </Routes>
+        </div>
+      </div>
 
     </div>
   );
