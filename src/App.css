@@ -10,29 +10,6 @@ a:visited {
   color: rgb(255, 191, 0)
 }
 
-.sidebar {
-  width: 50px;
-  height: 100vh;
-  background-color: #777;
-  color: white;
-  padding: 20px;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-}
-
-.sidebar ul li {
-  margin-bottom: 10px;
-}
-
-.sidebarbutton-photo {
-  height: 50px;
-  width: 50px;
-  padding-bottom: 20px;
-}
-
 .content {
   flex: 1;
   padding: 20px;
