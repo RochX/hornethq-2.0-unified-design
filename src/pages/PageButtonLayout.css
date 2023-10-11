@@ -1,0 +1,20 @@
+.page-button-layout {
+  display: flex;
+  width: 80vw;
+  padding: 20px;
+  justify-content: space-around;
+}
+
+/* define stuff for the page button itself */
+.page-button-layout {
+  .pagebutton {
+    flex: 1;
+    width: 30vw;
+    border: solid grey 3px;
+    padding: 10px;
+  }
+  
+  .pagebutton h3 {
+    margin-top: 0px;
+  }
+}
