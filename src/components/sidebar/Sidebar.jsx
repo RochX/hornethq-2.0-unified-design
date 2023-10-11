@@ -1,7 +1,7 @@
 import React from "react";
-import SidebarButton from "./sidebar/SidebarButton";
+import SidebarButton from "./SidebarButton";
 
-import "./sidebar/Sidebar.css"
+import "./Sidebar.css"
 
 function Sidebar() {
   return (

@@ -4,7 +4,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
-import Sidebar from "./components/Sidebar";
+import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/Topbar";
 
 import "./App.css"
