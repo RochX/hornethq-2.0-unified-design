@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"
 
-import PageButtonLayout from "./PageButtonLayout"
+import PageButtonLayout from "../components/PageButtonLayout"
 
 const PAGE_BUTTONS_CONTENT = [
   {title: "Grades", description: "View grades here.", icon: ""},
