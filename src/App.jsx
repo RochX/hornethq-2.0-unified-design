@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
 import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/Topbar";
+import Topbar from "./components/topbar/Topbar";
 
 import "./App.css"
 
