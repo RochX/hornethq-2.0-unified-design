@@ -17,6 +17,30 @@
   margin-bottom: 2%;
 }
 
+.pagebutton a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: blue;
+  text-decoration: none;
+  white-space: pre-line;
+}
+
+.pagebutton a:visited {
+  color: blue;
+  text-decoration: none;
+}
+
+.pagebutton a:hover {
+  background-color: lightblue;
+}
+
 .pagebutton h3 {
   margin-top: 0px;
+  padding: 10px;
+}
+
+.pagebutton span {
+  padding: 10px;
+  margin-bottom: 5px;
 }

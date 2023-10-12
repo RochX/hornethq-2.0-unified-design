@@ -12,6 +12,7 @@ function PageButtonLayout (props) {
       title={button.title}
       description={button.description}
       icon={button.icon}
+      path={button.path}
     />
   )
 
