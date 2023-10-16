@@ -10,11 +10,11 @@
 .pagebutton {
   flex: 1;
   border: solid grey 3px;
-  padding: 10px;
   width: 50%;
   min-width: 40%;
   margin-left: 2%;
   margin-bottom: 2%;
+  overflow: hidden;
 }
 
 .pagebutton a {
@@ -24,6 +24,7 @@
   color: blue;
   text-decoration: none;
   white-space: pre-line;
+  padding: 10px;
 }
 
 .pagebutton a:visited {
