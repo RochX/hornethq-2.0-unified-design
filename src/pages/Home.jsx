@@ -9,7 +9,7 @@ const PAGE_BUTTONS_CONTENT = [
   {title: "Employee", description: "Here you can view your tax form consents, earnings statements, banking information, timecards, and leave balances.", path: "/employee"},
   {title: "Student Planning", description: "Here you can search for courses, plan your terms, and schedule & register your course sections."},
   {title: "Course Catalog", description: "Here you can view and search the course catalog."},
-  {title: "Grades", description: "Here you can view your grades by term."}
+  {title: "Grades", description: "Here you can view your grades by term.", path: "/academics/grades"}
 ]
 
 function Home() {
