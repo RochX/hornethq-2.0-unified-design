@@ -4,6 +4,7 @@ import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
+import Employee from "./pages/Employee";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 
@@ -38,6 +39,7 @@ function App() {
               <Route path="home" element={<Home />} />
               <Route path="academics" element={<Academics />} />
               <Route path="/academics/grades" element={<Grades />} />
+              <Route path="employee" element={<Employee />} />
             </Route>
           </Routes>
         </div>
