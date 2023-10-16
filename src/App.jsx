@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link, useLocation } from "react-router-dom";
+import { nanoid } from "nanoid";
 
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
@@ -11,6 +12,27 @@ import Topbar from "./components/topbar/Topbar";
 import "./App.css"
 
 function App() {
+  // slice to remove the starting '/'
+  const locationArray = useLocation().pathname.slice(1).split("/");
+
+  let pathnameArray = []
+  for (let i = 0; i < locationArray.length; i++) {
+    if (i === 0) {
+      pathnameArray.push("/" + locationArray[i]);
+    }
+    else {
+      pathnameArray.push(pathnameArray[i-1] + "/" + locationArray[i]);
+    }
+  }
+  // add home path to beginning if not already present
+  if (pathnameArray[0] !== "/home") {
+    pathnameArray.splice(0, 0, "/home");
+  }
+  // map all path elements into navigation links
+  const navButtons = pathnameArray.map((pathname, index) =>
+      <span>{(index ? ' > ' : '')} <Link to={pathname} key={`nav-path-${index}`}>{pathname}</Link></span>
+  );
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -33,6 +55,7 @@ function App() {
       <div className="main-page">
         <Topbar />
         <div className="content">
+          {navButtons}
           <Routes>
             <Route path="/">
               <Route index element={<Home />} />
