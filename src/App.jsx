@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route, Outlet, Link, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, Outlet, Link, useLocation } from "react-router-dom";
 import { nanoid } from "nanoid";
 
 import Home from "./pages/Home";
@@ -30,7 +30,11 @@ function App() {
   }
   // map all path elements into navigation links
   const navButtons = pathnameArray.map((pathname, index) =>
-      <span>{(index ? ' > ' : '')} <Link to={pathname} key={`nav-path-${index}`}>{pathname}</Link></span>
+    { if (index !== pathnameArray.length-1)
+        return <span>{(index ? ' > ' : '')} <Link to={pathname} key={`nav-path-${index}`}>{pathname.slice(pathname.lastIndexOf("/")+1)}</Link></span>
+      else 
+        return (index ? ' > ' : '') + pathname.slice(pathname.lastIndexOf("/")+1)
+    }
   );
 
   return (
@@ -58,7 +62,7 @@ function App() {
           {navButtons}
           <Routes>
             <Route path="/">
-              <Route index element={<Home />} />
+              <Route index element={<Navigate to="/home" />} />
               <Route path="home" element={<Home />} />
               <Route path="academics" element={<Academics />} />
               <Route path="/academics/grades" element={<Grades />} />
