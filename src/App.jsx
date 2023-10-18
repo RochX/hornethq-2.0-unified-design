@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
 import Employee from "./pages/Employee";
+import FinInfo from "./pages/FinInfo";
+import Billing from "./pages/FinInfo/Billing";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 
@@ -67,6 +69,8 @@ function App() {
               <Route path="academics" element={<Academics />} />
               <Route path="/academics/grades" element={<Grades />} />
               <Route path="employee" element={<Employee />} />
+              <Route path="financial" element={<FinInfo />} />
+              <Route path="/financial/billing" element={<Billing />} />
             </Route>
           </Routes>
         </div>

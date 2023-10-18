@@ -3,9 +3,10 @@ import React from "react";
 import PageButtonLayout from "../components/PageButtonLayout"
 
 const PAGE_BUTTONS_CONTENT = [
-  {title: "Billing", description: "Here you can view your latest statement and make a payment online."},
-  {title: "Financial Aid", description: "Here you can access financial aid data, forms, etc."},
-  {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."},
+  {title: "Academics", description: "Go to academics page.", path: "/academics"},
+  // {title: "Billing", description: "Here you can view your latest statement and make a payment online."},
+  {title: "Financial Information", description: "Here you can access billing, financial aid data, forms, etc.", path: "/financial"},
+  // {title: "Tax Information", description: "Here you can change your consent for e-delivery of tax information."},
   {title: "Employee", description: "Here you can view your tax form consents, earnings statements, banking information, timecards, and leave balances.", path: "/employee"},
   {title: "Student Planning", description: "Here you can search for courses, plan your terms, and schedule & register your course sections."},
   {title: "Course Catalog", description: "Here you can view and search the course catalog."},
