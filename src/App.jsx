@@ -1,6 +1,6 @@
 import React from "react";
-import { Routes, Route, Navigate, Outlet, Link, useLocation } from "react-router-dom";
-import { nanoid } from "nanoid";
+import { Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
+import { DragDropContext } from "react-beautiful-dnd";
 
 import Home from "./pages/Home";
 import Academics from "./pages/Academics";
@@ -39,6 +39,10 @@ function App() {
     }
   );
 
+  const onDragEnd = (result) => {
+    // TODO: reorder list
+  }
+
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -62,17 +66,19 @@ function App() {
         <Topbar />
         <div className="content">
           {navButtons}
-          <Routes>
-            <Route path="/">
-              <Route index element={<Navigate to="/home" />} />
-              <Route path="home" element={<Home />} />
-              <Route path="academics" element={<Academics />} />
-              <Route path="/academics/grades" element={<Grades />} />
-              <Route path="employee" element={<Employee />} />
-              <Route path="financial" element={<FinInfo />} />
-              <Route path="/financial/billing" element={<Billing />} />
-            </Route>
-          </Routes>
+          <DragDropContext onDragEnd={onDragEnd}>
+            <Routes>
+              <Route path="/">
+                <Route index element={<Navigate to="/home" />} />
+                <Route path="home" element={<Home />} />
+                <Route path="academics" element={<Academics />} />
+                <Route path="/academics/grades" element={<Grades />} />
+                <Route path="employee" element={<Employee />} />
+                <Route path="financial" element={<FinInfo />} />
+                <Route path="/financial/billing" element={<Billing />} />
+              </Route>
+            </Routes>
+          </DragDropContext>
         </div>
       </div>
 
