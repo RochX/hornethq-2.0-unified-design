@@ -45,22 +45,6 @@ function App() {
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-        <p>
-          Hornet HQ 2.0 Unified Design Prototype
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-
-      <hr></hr> */}
-      
       <Sidebar />
       <div className="main-page">
         <Topbar />
