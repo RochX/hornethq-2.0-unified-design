@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: auto;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding-top: 60px; /* Height of the top bar */
+ }
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 30px;
+  transition: margin-left 0.3s ease;
+}
+
+.sidebar.open + .main-content {
+  margin-left: 200px; /* Adjusted margin when the sidebar is open */
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 200px; /* Width of the sidebar */
+  width: calc(100% - 200px); /* Adjust for the remaining width */
+  height: 60px;
+  background-color: #444;
+  padding: 10px;
+  z-index: 2;
+}
+
+/* .content {
+    flex: 1;
+    padding: 20px;
+  }
+  .Navbar-container {
+    background: #333333;
+  }
+  .mainpage {
+    display: grid;
+    grid-template-rows: 1fr 9fr;
+    width: 100%;
+  } */
+
+   /* .header {
+    background: #333333;
+    width: 100%;
+  } */ 
+  /* .carousel-container {
+    width: 50vw;
+    background: yellow;
+  }
+  .calendar-carousel {
+    display: grid;
+    grid-template-columns: 6fr 5fr;
+    margin: 16px;
+    gap: 16px;
+  } */
