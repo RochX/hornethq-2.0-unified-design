@@ -30,14 +30,13 @@ const Layout = () => {
     <>
     <div className="container">
       <div className="sidebar"> 
-      <Sidebar />
+        <Sidebar />
       </div>
-      <div>
-        <div className="main"> 
-        <Topbar />
-        <div className="outlet">
-          <Breadcrumb paths={paths} />
-        </div>
+        <div className="main">
+            <Topbar />
+          <div className="breadcrumb">
+            <Breadcrumb paths={paths} />
+          </div>
         {/* <div className="calendar-carousel">
           <div className="carousel-container">
             <Carrousel />
@@ -47,7 +46,6 @@ const Layout = () => {
           <Outlet/> 
         </div>
       </div>
-    </div>
     </>
   );
 };

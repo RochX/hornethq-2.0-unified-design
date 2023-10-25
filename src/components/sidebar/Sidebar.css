@@ -1,5 +1,5 @@
 .sidebar {
-  width: 60px;
+  
   height: 100vh;
   background-color: #444;
   color: white;
@@ -9,9 +9,12 @@
   padding-top: 20px; /* Adjust top padding as needed */
   transition: width 0.3s ease;
 }
+.sidebar.open{
+  width: 200px;
+}
 
-.sidebar.open {
-  width: 200px; /* Set the width when the sidebar is open */
+.sidebar.close {
+  width: 100px; /* Set the width when the sidebar is open */
 }
 
 .hamburger {

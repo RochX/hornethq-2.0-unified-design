@@ -12,7 +12,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className={`sidebar ${isOpen ? "open" : ""}`}>
+    <div className={`sidebar ${isOpen ? " close" : "open"}`}>
       <div className="hamburger" onClick={toggleSidebar}>
         <FaBars />
       </div>
