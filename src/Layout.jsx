@@ -5,6 +5,8 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 import { Outlet } from "react-router-dom";
 // import Calendar from "./components/Calendar/Calendar";
+import Breadcrumb from "./Breadcrumb"; // Assuming you have a Breadcrumb component
+import { useLocation } from "react-router-dom";
 
 const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -13,6 +15,17 @@ const Layout = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  // Parse the current path and create breadcrumb paths
+  const paths = currentPath
+    .split("/")
+    .filter((path) => path)
+    .map((path, index, array) => {
+      const url = `/${array.slice(0, index + 1).join("/")}`;
+      return { url, label: path.charAt(0).toUpperCase() + path.slice(1) }; // Capitalize the first letter
+    });
   return (
     <>
     <div className="container">
@@ -22,6 +35,8 @@ const Layout = () => {
       <div>
         <div className="main"> 
         <Topbar />
+        <div className="outlet">
+          <Breadcrumb paths={paths} />
         </div>
         {/* <div className="calendar-carousel">
           <div className="carousel-container">
@@ -29,7 +44,8 @@ const Layout = () => {
           </div>
           <div className="calendar">
             <Calendar /> */}
-        <div className="outlet"><Outlet/> </div>
+          <Outlet/> 
+        </div>
       </div>
     </div>
     </>
