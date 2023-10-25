@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import PageButton from "../components/PageButton";
 import PageButtonLayout from "../components/PageButtonLayout";
 import { DragDropContext } from "react-beautiful-dnd";
 
@@ -48,11 +49,23 @@ const onDragEnd = (result) => {
 
 function ButtonPage(props) {
   const currentPageButtonData = pageButtonDataDictionary[props.className];
+  const pageButtons = currentPageButtonData.map((button, index) =>
+    <PageButton 
+      id={`pagebutton-${index}`}
+      key={`pagebutton-${index}`}
+      index={index}
+      title={button.title}
+      description={button.description}
+      icon={button.icon}
+      path={button.path}
+    />
+  );
+
   return (
     <DragDropContext onDragEnd={onDragEnd}>
       <div className={props.className}>
         <h1>Welcome to the {props.className} page!</h1>
-        <PageButtonLayout pagebuttondata={currentPageButtonData} />
+        <PageButtonLayout pageButtons={pageButtons} />
       </div>
     </DragDropContext>
   )
