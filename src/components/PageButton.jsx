@@ -7,7 +7,7 @@ import { Draggable } from "react-beautiful-dnd";
 
 function PageButton (props) {
   return (
-    <Draggable draggableId={props.id} index={props.index}>
+    <Draggable key={props.id} draggableId={props.id} index={props.index}>
       {(provided) => (
         <div className="pagebutton" 
           {...provided.draggableProps} 
