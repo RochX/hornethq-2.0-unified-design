@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import PageButton from "../components/PageButton";
 import PageButtonLayout from "../components/PageButtonLayout";
@@ -42,24 +42,63 @@ pageButtonDataDictionary["academics"] = ACADEMICS_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["financial"] = FININFO_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["employee"] = EMPLOYEE_PAGE_BUTTONS_CONTENT;
 
-const onDragEnd = (result) => {
-  // TODO: implement saving of reordering
-  return;
+function reorder(list, startIndex, endIndex) {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
 }
 
 function ButtonPage(props) {
-  const currentPageButtonData = pageButtonDataDictionary[props.className];
-  const pageButtons = currentPageButtonData.map((button, index) =>
-    <PageButton 
-      id={`pagebutton-${index}`}
-      key={`pagebutton-${index}`}
-      index={index}
-      title={button.title}
-      description={button.description}
-      icon={button.icon}
-      path={button.path}
-    />
-  );
+  const [pageButtons, setPageButtons] = useState(); 
+
+  // update the page buttons on page change
+  useEffect(() => {
+    const newPageButtons = pageButtonDataDictionary[props.className].map((button, index) =>
+      <PageButton 
+        id={`pagebutton-${index}`}
+        key={`pagebutton-${index}`}
+        index={index}
+        title={button.title}
+        description={button.description}
+        icon={button.icon}
+        path={button.path}
+      />
+    );
+    
+    setPageButtons(newPageButtons)
+  }, [props.className]);
+
+  const onDragEnd = (result) => {
+    const { destination, source, draggableId} = result;
+
+    if (!destination) {
+      return;
+    }
+
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+
+    // TODO: save the reordering of the list after drag and drop
+
+    // console.log(destination.index, source.index)
+
+    // console.log("before reordering:", pageButtons);
+
+    // const reorderedButtons = reorder(
+    //   pageButtons,
+    //   source.index,
+    //   destination.index
+    // );
+
+    // console.log("reordered:", reorderedButtons);
+    // setPageButtons(reorderedButtons);
+  }
 
   return (
     <DragDropContext onDragEnd={onDragEnd}>
