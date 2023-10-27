@@ -10,11 +10,12 @@
 .pagebutton {
   flex: 1;
   border: solid grey 3px;
-  width: 50%;
-  min-width: 40%;
+  width: 100%;
+  min-width: 100%;
   margin-left: 2%;
   margin-bottom: 2%;
   overflow: hidden;
+  background-color: white;
 }
 
 .pagebutton a {
