@@ -61,12 +61,13 @@ function ButtonPage(props) {
         key={`pagebutton-${index}`}
         index={index}
         title={button.title}
+        // title={`button-${index}`}
         description={button.description}
         icon={button.icon}
         path={button.path}
       />
     );
-    
+
     setPageButtons(newPageButtons)
   }, [props.className]);
 
@@ -84,29 +85,21 @@ function ButtonPage(props) {
       return;
     }
 
-    // TODO: save the reordering of the list after drag and drop
+    // save reordering of buttons
+    const items = [...pageButtons];
+    const [reorderedItem] = items.splice(result.source.index, 1);
+    items.splice(result.destination.index, 0, reorderedItem);
 
-    // console.log(destination.index, source.index)
-
-    // console.log("before reordering:", pageButtons);
-
-    // const reorderedButtons = reorder(
-    //   pageButtons,
-    //   source.index,
-    //   destination.index
-    // );
-
-    // console.log("reordered:", reorderedButtons);
-    // setPageButtons(reorderedButtons);
+    setPageButtons(items);
   }
 
   return (
-    <DragDropContext onDragEnd={onDragEnd}>
-      <div className={props.className}>
-        <h1>Welcome to the {props.className} page!</h1>
-        <PageButtonLayout pageButtons={pageButtons} />
-      </div>
-    </DragDropContext>
+    <div className={props.className}>
+      <DragDropContext onDragEnd={onDragEnd}>
+          <h1>Welcome to the {props.className} page!</h1>
+          <PageButtonLayout pageButtons={pageButtons} />
+      </DragDropContext>
+    </div>
   )
 }
 
