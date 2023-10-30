@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Layout.css";
 // import Carrousel from "./components/Carrousel";
-import Sidebar from "./components/sidebar/Sidebar";
-import Topbar from "./components/topbar/Topbar";
+import Sidebar from "./sidebar/Sidebar";
+import Topbar from "./topbar/Topbar";
 import { Outlet } from "react-router-dom";
 // import Calendar from "./components/Calendar/Calendar";
 import Breadcrumb from "./Breadcrumb"; // Assuming you have a Breadcrumb component

@@ -5,7 +5,7 @@ import Home from "./pages/Home";
 import Academics from "./pages/Academics";
 import Grades from "./pages/Academics/Grades";
 import "./App.css"
-import Layout from "./Layout";
+import Layout from "./components/Layout";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 .sidebar {
   
   height: 100vh;
-  background-color: #444;
+  background-color: #333;
   color: white;
   display: flex;
   flex-direction: column; /* Arrange items vertically */
@@ -14,7 +14,7 @@
 }
 
 .sidebar.close {
-  width: 100px; /* Set the width when the sidebar is open */
+  width: 70px; /* Set the width when the sidebar is open */
 }
 
 .hamburger {
@@ -29,10 +29,19 @@
   padding: 0;
 }
 
-.sidebar ul li {
+.sidebar.open ul li {
+  margin-left: 0;
   margin-bottom: 10px;
   width: 100%; /* Make the buttons fill the width */
   text-align: center; /* Center the button text */
+}
+
+.sidebar.close ul li {
+  margin-left: -50px;
+  margin-bottom: 10px;
+  width: 100%; /* Make the buttons fill the width */
+  text-align: center; /* Center the button text */
+  transition: margin-left 0.3s ease;
 }
 
 .sidebarbutton-photo {
