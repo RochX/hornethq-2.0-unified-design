@@ -41,13 +41,6 @@ pageButtonDataDictionary["academics"] = ACADEMICS_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["financial"] = FININFO_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["employee"] = EMPLOYEE_PAGE_BUTTONS_CONTENT;
 
-function reorder(list, startIndex, endIndex) {
-  const result = Array.from(list);
-  const [removed] = result.splice(startIndex, 1);
-  result.splice(endIndex, 0, removed);
-
-  return result;
-}
 
 function ButtonPage(props) {
   const [mainNavButtons, setMainNavButtons] = useState(); 
