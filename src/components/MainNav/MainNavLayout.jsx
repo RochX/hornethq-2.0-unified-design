@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
-import PageButton from "../components/PageButton";
-import PageButtonLayout from "../components/PageButtonLayout";
+import MainNavButton from "./MainNavButton";
+import "./MainNavLayout.css";
 
 const HOME_PAGE_BUTTONS_CONTENT = [
   {title: "Academics", description: "Go to academics page.", path: "/academics"},
@@ -50,14 +50,14 @@ function reorder(list, startIndex, endIndex) {
 }
 
 function ButtonPage(props) {
-  const [pageButtons, setPageButtons] = useState(); 
+  const [mainNavButtons, setMainNavButtons] = useState(); 
 
   // update the page buttons on page change
   useEffect(() => {
-    const newPageButtons = pageButtonDataDictionary[props.className].map((button, index) =>
-      <PageButton 
-        id={`pagebutton-${index}`}
-        key={`pagebutton-${index}`}
+    const newPageButtons = pageButtonDataDictionary[props.id].map((button, index) =>
+      <MainNavButton 
+        id={`main-nav-button-${index}`}
+        key={`main-nav-button-${index}`}
         index={index}
         title={button.title}
         // title={`button-${index}`}
@@ -67,14 +67,16 @@ function ButtonPage(props) {
       />
     );
 
-    setPageButtons(newPageButtons)
-  }, [props.className]);
+    setMainNavButtons(newPageButtons)
+  }, [props.id]);
 
   return (
-    <div className={props.className}>
-      <h1>Welcome to the {props.className} page!</h1>
-      <PageButtonLayout pageButtons={pageButtons} />
-    </div>
+    <>
+      <h1>Welcome to the {props.id} page!</h1>
+      <div className="main-nav-layout" id={props.id}>
+        {mainNavButtons}
+      </div>
+    </>
   )
 }
 

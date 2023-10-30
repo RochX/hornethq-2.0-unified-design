@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate, Link, useLocation } from "react-router-dom";
 
-import ButtonPage from "./pages/ButtonPage";
+import MainNavLayout from "./components/MainNav/MainNavLayout";
 import Grades from "./pages/Academics/Grades";
 import Billing from "./pages/FinInfo/Billing";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -45,11 +45,11 @@ function App() {
             <Routes>
               <Route path="/">
                 <Route index element={<Navigate to="/home" />} />
-                <Route path="home" element={<ButtonPage className="home" />} />
-                <Route path="academics" element={<ButtonPage className="academics" />} />
+                <Route path="home" element={<MainNavLayout id="home" />} />
+                <Route path="academics" element={<MainNavLayout id="academics" />} />
                 <Route path="/academics/grades" element={<Grades />} />
-                <Route path="employee" element={<ButtonPage className="employee" />} />
-                <Route path="financial" element={<ButtonPage className="financial" />} />
+                <Route path="employee" element={<MainNavLayout id="employee" />} />
+                <Route path="financial" element={<MainNavLayout id="financial" />} />
                 <Route path="/financial/billing" element={<Billing />} />
               </Route>
             </Routes>

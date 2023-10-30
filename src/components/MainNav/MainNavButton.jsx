@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 // It has a title and description on what it where it goes
 // It also has an icon within a grey circle. Create fallback text in case image is not present
 
-function PageButton (props) {
+function MainNavButton (props) {
   return (
-    <div className="pagebutton">
+    <div className="main-nav-button" id={props.id}>
       <Link to={props.path}>
         <h3>{props.title}</h3>
         <span>{props.description}</span>
@@ -15,4 +15,4 @@ function PageButton (props) {
   );
 }
 
-export default PageButton;
+export default MainNavButton;
