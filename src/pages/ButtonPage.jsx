@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 
 import PageButton from "../components/PageButton";
 import PageButtonLayout from "../components/PageButtonLayout";
-import { DragDropContext } from "react-beautiful-dnd";
 
 const HOME_PAGE_BUTTONS_CONTENT = [
   {title: "Academics", description: "Go to academics page.", path: "/academics"},
@@ -71,34 +70,10 @@ function ButtonPage(props) {
     setPageButtons(newPageButtons)
   }, [props.className]);
 
-  const onDragEnd = (result) => {
-    const { destination, source, draggableId} = result;
-
-    if (!destination) {
-      return;
-    }
-
-    if (
-      destination.droppableId === source.droppableId &&
-      destination.index === source.index
-    ) {
-      return;
-    }
-
-    // save reordering of buttons
-    const items = [...pageButtons];
-    const [reorderedItem] = items.splice(result.source.index, 1);
-    items.splice(result.destination.index, 0, reorderedItem);
-
-    setPageButtons(items);
-  }
-
   return (
     <div className={props.className}>
-      <DragDropContext onDragEnd={onDragEnd}>
-          <h1>Welcome to the {props.className} page!</h1>
-          <PageButtonLayout pageButtons={pageButtons} />
-      </DragDropContext>
+      <h1>Welcome to the {props.className} page!</h1>
+      <PageButtonLayout pageButtons={pageButtons} />
     </div>
   )
 }
