@@ -1,6 +1,6 @@
-.App {
+/* .App {
   display: flex;
-}
+} */
 
 .App-link {
   color: #ffffff
@@ -10,7 +10,3 @@ a:visited {
   color: rgb(255, 191, 0)
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
-}
