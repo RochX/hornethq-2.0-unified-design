@@ -25,16 +25,16 @@ body {
   margin-left: 200px; /* Adjusted margin when the sidebar is open */
 }
 
-.topbar {
+/* .topbar {
   position: fixed;
   top: 0;
-  left: 200px; /* Width of the sidebar */
-  width: calc(100% - 200px); /* Adjust for the remaining width */
+  left: 200px; // Width of the sidebar
+  width: calc(100% - 200px); // Adjust for the remaining width
   height: 60px;
   background-color: #444;
   padding: 10px;
   z-index: 2;
-}
+} */
 
 /* .content {
     flex: 1;
