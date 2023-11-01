@@ -1,22 +1,52 @@
 .sidebar {
-  width: 50px;
-  height: 100vh;
-  background-color: #777;
-  color: white;
-  padding: 20px;
-}
   
+  height: 100vh;
+  background-color: #333;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center; /* Center items horizontally */
+  padding-top: 20px; /* Adjust top padding as needed */
+  transition: width 0.3s ease;
+}
+.sidebar.open{
+  width: 200px;
+}
+
+.sidebar.close {
+  width: 70px; /* Set the width when the sidebar is open */
+}
+
+.hamburger {
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
+}
+
 .sidebar ul {
   list-style: none;
   padding: 0;
 }
 
-.sidebar ul li {
+.sidebar.open ul li {
+  margin-left: 0;
   margin-bottom: 10px;
+  width: 100%; /* Make the buttons fill the width */
+  text-align: center; /* Center the button text */
+}
+
+.sidebar.close ul li {
+  margin-left: -50px;
+  margin-bottom: 10px;
+  width: 100%; /* Make the buttons fill the width */
+  text-align: center; /* Center the button text */
+  transition: margin-left 0.3s ease;
 }
 
 .sidebarbutton-photo {
   height: 50px;
   width: 50px;
-  padding-bottom: 20px;
-}
+  margin-bottom: 10px; /* Adjust bottom margin for spacing between buttons */
+  padding-bottom: 20px; 
+} 
