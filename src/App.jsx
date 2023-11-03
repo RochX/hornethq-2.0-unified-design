@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import BreadCrumbNav from "./components/BreadCrumbNav";
 import MainNavLayout from "./components/MainNav/MainNavLayout";
 import Grades from "./pages/Academics/Grades";
+import CourseCatalog from "./pages/Academics/CourseCatalog";
 import Billing from "./pages/FinInfo/Billing";
 import FinAid from "./pages/FinInfo/FinAid";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -26,6 +27,7 @@ function App() {
                 <Route path="home" element={<MainNavLayout id="home" />} />
                 <Route path="academics" element={<MainNavLayout id="academics" />} />
                 <Route path="/academics/grades" element={<Grades />} />
+                <Route path="/academics/catalog" element={<CourseCatalog />} />
                 <Route path="employee" element={<MainNavLayout id="employee" />} />
                 <Route path="financial" element={<MainNavLayout id="financial" />} />
                 <Route path="/financial/billing" element={<Billing />} />
