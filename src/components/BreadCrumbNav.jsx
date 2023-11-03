@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function BreadCrumbNav() {
   return (
-    <span>{useCreateBreadCrumbLinks()}</span>
+    <div className="breadcrumbnav">{useCreateBreadCrumbLinks()}</div>
   )
 };
 
