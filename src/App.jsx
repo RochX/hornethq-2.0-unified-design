@@ -5,6 +5,7 @@ import BreadCrumbNav from "./components/BreadCrumbNav";
 import MainNavLayout from "./components/MainNav/MainNavLayout";
 import Grades from "./pages/Academics/Grades";
 import CourseCatalog from "./pages/Academics/CourseCatalog";
+import StudentPlanning from "./pages/Academics/StudentPlanning";
 import Billing from "./pages/FinInfo/Billing";
 import FinAid from "./pages/FinInfo/FinAid";
 import Sidebar from "./components/sidebar/Sidebar";
@@ -28,6 +29,7 @@ function App() {
                 <Route path="academics" element={<MainNavLayout id="academics" />} />
                 <Route path="/academics/grades" element={<Grades />} />
                 <Route path="/academics/catalog" element={<CourseCatalog />} />
+                <Route path="/academics/planning" element={<StudentPlanning />} />
                 <Route path="employee" element={<MainNavLayout id="employee" />} />
                 <Route path="financial" element={<MainNavLayout id="financial" />} />
                 <Route path="/financial/billing" element={<Billing />} />
