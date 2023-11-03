@@ -5,10 +5,12 @@ import BreadCrumbNav from "./components/BreadCrumbNav";
 import MainNavLayout from "./components/MainNav/MainNavLayout";
 import Grades from "./pages/Academics/Grades";
 import Billing from "./pages/FinInfo/Billing";
+import FinAid from "./pages/FinInfo/FinAid";
 import Sidebar from "./components/sidebar/Sidebar";
 import Topbar from "./components/topbar/Topbar";
 
 import "./App.css"
+
 
 function App() {
   return (
@@ -27,6 +29,7 @@ function App() {
                 <Route path="employee" element={<MainNavLayout id="employee" />} />
                 <Route path="financial" element={<MainNavLayout id="financial" />} />
                 <Route path="/financial/billing" element={<Billing />} />
+                <Route path="/financial/aid" element={<FinAid />} />
               </Route>
             </Routes>
         </div>
