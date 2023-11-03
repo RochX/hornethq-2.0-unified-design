@@ -15,17 +15,6 @@ const Layout = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const location = useLocation();
-  const currentPath = location.pathname;
-
-  // Parse the current path and create breadcrumb paths
-  const paths = currentPath
-    .split("/")
-    .filter((path) => path)
-    .map((path, index, array) => {
-      const url = `/${array.slice(0, index + 1).join("/")}`;
-      return { url, label: path.charAt(0).toUpperCase() + path.slice(1) }; // Capitalize the first letter
-    });
   return (
     <>
     <div className="container">
@@ -35,7 +24,7 @@ const Layout = () => {
         <div className="main">
             <Topbar />
           <div className="breadcrumb">
-            <Breadcrumb paths={paths} />
+            <Breadcrumb />
           </div>
         {/* <div className="calendar-carousel">
           <div className="carousel-container">

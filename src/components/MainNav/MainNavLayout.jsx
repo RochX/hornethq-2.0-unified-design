@@ -3,6 +3,38 @@ import React, { useEffect, useState } from "react";
 import MainNavButton from "./MainNavButton";
 import "./MainNavLayout.css";
 
+var pageButtonDataDictionary = []
+function MainNavLayout(props) {
+  const [mainNavButtons, setMainNavButtons] = useState(); 
+
+  // update the page buttons on page change
+  useEffect(() => {
+    const newPageButtons = pageButtonDataDictionary[props.id].map((button, index) =>
+      <MainNavButton 
+        id={`main-nav-button-${index}`}
+        key={`main-nav-button-${index}`}
+        index={index}
+        title={button.title}
+        // title={`button-${index}`}
+        description={button.description}
+        icon={button.icon}
+        path={button.path}
+      />
+    );
+
+    setMainNavButtons(newPageButtons)
+  }, [props.id]);
+
+  return (
+    <>
+      <h1>Welcome to the {props.id} page!</h1>
+      <div className="main-nav-layout" id={props.id}>
+        {mainNavButtons}
+      </div>
+    </>
+  )
+}
+
 const HOME_PAGE_BUTTONS_CONTENT = [
   {title: "Academics", description: "Go to academics page.", path: "/academics"},
   // {title: "Billing", description: "Here you can view your latest statement and make a payment online."},
@@ -35,42 +67,9 @@ const EMPLOYEE_PAGE_BUTTONS_CONTENT = [
   {title: "Time History", description: "Here you can view paid timecards for the people you supervise."}
 ]
 
-var pageButtonDataDictionary = []
 pageButtonDataDictionary["home"] = HOME_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["academics"] = ACADEMICS_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["financial"] = FININFO_PAGE_BUTTONS_CONTENT;
 pageButtonDataDictionary["employee"] = EMPLOYEE_PAGE_BUTTONS_CONTENT;
 
-
-function ButtonPage(props) {
-  const [mainNavButtons, setMainNavButtons] = useState(); 
-
-  // update the page buttons on page change
-  useEffect(() => {
-    const newPageButtons = pageButtonDataDictionary[props.id].map((button, index) =>
-      <MainNavButton 
-        id={`main-nav-button-${index}`}
-        key={`main-nav-button-${index}`}
-        index={index}
-        title={button.title}
-        // title={`button-${index}`}
-        description={button.description}
-        icon={button.icon}
-        path={button.path}
-      />
-    );
-
-    setMainNavButtons(newPageButtons)
-  }, [props.id]);
-
-  return (
-    <>
-      <h1>Welcome to the {props.id} page!</h1>
-      <div className="main-nav-layout" id={props.id}>
-        {mainNavButtons}
-      </div>
-    </>
-  )
-}
-
-export default ButtonPage;
+export default MainNavLayout;
